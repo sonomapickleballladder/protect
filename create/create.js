@@ -117,13 +117,13 @@ async function onEncrypt() {
 
   const encrypted = await generateFragment(url, password, hint, useRandomSalt,
       useRandomIv);
-  const output = `https://sonomapickleballladder.github.io/calendars/#${encrypted}`;
+  const output = `https://sonomapickleballladder.github.io/protect/#${encrypted}`;
 
   document.querySelector("#output").value = output;
   highlight("output");
 
   // Adjust "Hidden Bookmark" link
-  document.querySelector("#bookmark").href = `https://sonomapickleballladder.github.io/calendars/hidden/#${encrypted}`;
+  document.querySelector("#bookmark").href = `https://sonomapickleballladder.github.io/protect/hidden/#${encrypted}`;
 
   // Adjust "Open in New Tab" link
   document.querySelector("#open").href = output;

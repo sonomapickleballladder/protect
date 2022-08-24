@@ -48,9 +48,9 @@ async function main() {
     let hint, password;
     if ("h" in params) {
       hint = params["h"];
-      password = prompt(`Please enter the password to unlock the link.\n\nHint: ${hint}`);
+      password = prompt(`This link is password protected.\n\nHint: ${hint}`);
     } else {
-      password = prompt("Please enter the password to unlock the link.");
+      password = prompt("This link is password protected.");
     }
 
     // Decrypt and redirect if possible
@@ -63,11 +63,11 @@ async function main() {
 
       // Set the "decrypt without redirect" URL appropriately
       document.querySelector("#no-redirect").href =
-        `https://sonomapickleballladder.github.io/calendars/decrypt/#${hash}`;
+        `https://sonomapickleballladder.github.io/protect/decrypt/#${hash}`;
 
       // Set the "create hidden bookmark" URL appropriately
       document.querySelector("#hidden").href =
-        `https://sonomapickleballladder.github.io/calendars/hidden/#${hash}`;
+        `https://sonomapickleballladder.github.io/protect/hidden/#${hash}`;
       return;
     }
 
